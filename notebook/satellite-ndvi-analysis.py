@@ -18,3 +18,14 @@ for root, dirs, files in os.walk(data_path):
 
 for root, dirs, files in os.walk(data_path):
     print(root)
+
+red_path = "/root/earth-analytics/data/ndvi-automation/sites/SJER/landsat-crop/LC080420342017061601T1-SC20181023152417/LC08_L1TP_042034_20170616_20170629_01_T1_sr_band4.tif"
+nir_path = "/root/earth-analytics/data/ndvi-automation/sites/SJER/landsat-crop/LC080420342017061601T1-SC20181023152417/LC08_L1TP_042034_20170616_20170629_01_T1_sr_band5.tif"
+
+red = rasterio.open(red_path)
+nir = rasterio.open(nir_path)
+
+red_band = red.read(1)
+nir_band = nir.read(1)
+
+print("Dimensão da imagem:", red_band.shape)
