@@ -29,3 +29,18 @@ red_band = red.read(1)
 nir_band = nir.read(1)
 
 print("Dimensão da imagem:", red_band.shape)
+
+red_band = red_band.astype(float)
+nir_band = nir_band.astype(float)
+
+np.seterr(divide='ignore', invalid='ignore')
+
+ndvi = (nir_band - red_band) / (nir_band + red_band)
+
+ndvi = np.clip(ndvi, -1, 1)
+
+ndvi_min = np.nanmin(ndvi)
+ndvi_max = np.nanmax(ndvi)
+
+print(f"NDVI mínimo: {ndvi_min:.4f}")
+print(f"NDVI máximo: {ndvi_max:.4f}")
