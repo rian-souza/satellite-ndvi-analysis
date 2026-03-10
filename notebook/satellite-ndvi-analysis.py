@@ -54,3 +54,15 @@ plt.title("Mapa NDVI da Área Observada")
 plt.axis("off")
 plt.show()
 
+ndvi_clean = ndvi[~np.isnan(ndvi)]
+
+plt.figure()
+sns.histplot(
+    ndvi_clean,
+    bins=50,
+    kde=True
+)
+plt.title("Distribuição dos Valores de NDVI")
+plt.xlabel("NDVI")
+plt.ylabel("Frequência")
+plt.show()
