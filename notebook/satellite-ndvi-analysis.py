@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import rasterio
 import earthpy as et
 import os
+import seaborn as snc
 
 data = et.data.get_data("ndvi-automation")
 print(data)
@@ -44,3 +45,12 @@ ndvi_max = np.nanmax(ndvi)
 
 print(f"NDVI mínimo: {ndvi_min:.4f}")
 print(f"NDVI máximo: {ndvi_max:.4f}")
+
+sns.set_theme(style="whitegrid", context="talk")
+plt.rcParams["figure.figsize"] = (10, 6)
+plt.imshow(ndvi, cmap="RdYlGn")
+plt.colorbar(label="NDVI")
+plt.title("Mapa NDVI da Área Observada")
+plt.axis("off")
+plt.show()
+
