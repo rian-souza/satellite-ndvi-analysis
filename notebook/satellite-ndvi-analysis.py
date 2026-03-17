@@ -66,3 +66,11 @@ plt.title("Distribuição dos Valores de NDVI")
 plt.xlabel("NDVI")
 plt.ylabel("Frequência")
 plt.show()
+
+ndvi_classes = np.zeros_like(ndvi)
+ndvi_classes[ndvi < 0] = 0
+ndvi_classes[(ndvi >= 0) & (ndvi < 0.2)] = 1
+ndvi_classes[(ndvi >= 0.2) & (ndvi < 0.5)] = 2
+ndvi_classes[ndvi >= 0.5] = 3
+
+print("Classificação criada com sucesso.")
