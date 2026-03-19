@@ -94,3 +94,26 @@ labels = {
 for classe, count in zip(unique, counts):
     porcentagem = (count / total_pixels) * 100
     print(f"{labels[int(classe)]}: {porcentagem:.2f}% da área")
+
+data = []
+
+for classe, count in zip(unique, counts):
+    porcentagem = (count / total_pixels) * 100
+    data.append({
+        "Classe": labels[int(classe)],
+        "Porcentagem": porcentagem
+    })
+
+df = pd.DataFrame(data)
+
+sns.set_theme(style="whitegrid")
+plt.figure(figsize=(8,6))
+sns.barplot(
+    data=df,
+    x="Classe",
+    y="Porcentagem"
+)
+plt.title("Distribuição de Cobertura do Solo (NDVI)")
+plt.ylabel("Porcentagem da Área (%)")
+plt.xlabel("Tipo de Cobertura")
+plt.show()
