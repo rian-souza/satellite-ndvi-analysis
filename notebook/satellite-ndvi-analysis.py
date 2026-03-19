@@ -74,3 +74,9 @@ ndvi_classes[(ndvi >= 0.2) & (ndvi < 0.5)] = 2
 ndvi_classes[ndvi >= 0.5] = 3
 
 print("Classificação criada com sucesso.")
+
+plt.figure(figsize=(10,8))
+plt.imshow(ndvi_classes, cmap="viridis")
+plt.title("Classificação da Vegetação (NDVI)")
+plt.colorbar()
+plt.show()
