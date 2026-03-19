@@ -80,3 +80,17 @@ plt.imshow(ndvi_classes, cmap="viridis")
 plt.title("Classificação da Vegetação (NDVI)")
 plt.colorbar()
 plt.show()
+
+unique, counts = np.unique(ndvi_classes, return_counts=True)
+total_pixels = ndvi_classes.size
+
+labels = {
+    0: "Água",
+    1: "Solo exposto",
+    2: "Vegetação moderada",
+    3: "Vegetação densa"
+}
+
+for classe, count in zip(unique, counts):
+    porcentagem = (count / total_pixels) * 100
+    print(f"{labels[int(classe)]}: {porcentagem:.2f}% da área")
