@@ -2,8 +2,7 @@
 
 Projeto de análise de vegetação utilizando **NDVI (Normalized Difference Vegetation Index)** a partir de imagens de satélite.
 
-⚠️ **Status:** Projeto em desenvolvimento.
-Este repositório está sendo construído gradualmente como parte do meu portfólio em **Ciência de Dados e Análise de Dados Geoespaciais**.
+✅ **Status:** Concluído — Aberto para melhorias.
 
 ## Objetivo
 
