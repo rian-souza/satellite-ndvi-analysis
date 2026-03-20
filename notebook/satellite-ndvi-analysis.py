@@ -5,7 +5,10 @@ import matplotlib.pyplot as plt
 import rasterio
 import earthpy as et
 import os
-import seaborn as snc
+import seaborn as sns
+import pandas as pd
+from matplotlib.colors import ListedColormap
+import matplotlib.patches as mpatches
 
 data = et.data.get_data("ndvi-automation")
 print(data)
