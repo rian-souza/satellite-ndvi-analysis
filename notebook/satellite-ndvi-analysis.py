@@ -117,3 +117,27 @@ plt.title("Distribuição de Cobertura do Solo (NDVI)")
 plt.ylabel("Porcentagem da Área (%)")
 plt.xlabel("Tipo de Cobertura")
 plt.show()
+
+cores = [
+    "#2c7bb6",
+    "#8c510a",
+    "#a6d96a",
+    "#1a9641"
+]
+
+cmap = ListedColormap(cores)
+
+plt.figure(figsize=(10,8))
+img = plt.imshow(ndvi_classes, cmap=cmap)
+plt.title("Mapa de Cobertura do Solo (Classificação NDVI)")
+
+legenda = [
+    mpatches.Patch(color=cores[0], label="Água"),
+    mpatches.Patch(color=cores[1], label="Solo exposto"),
+    mpatches.Patch(color=cores[2], label="Vegetação moderada"),
+    mpatches.Patch(color=cores[3], label="Vegetação densa")
+]
+
+plt.legend(handles=legenda, loc="lower right")
+plt.axis("off")
+plt.show()
